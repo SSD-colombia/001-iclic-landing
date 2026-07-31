@@ -181,7 +181,11 @@
   </div>
 </section>
 
-<section id="tienda" class="section-padding" style="max-width:1180px;margin:0 auto;padding:0 24px 110px">
+<div style="max-width:1180px;margin:0 auto;padding:60px 24px 0">
+  <div style="height:1px;background:linear-gradient(90deg, transparent, rgba(0,0,0,0.08) 20%, rgba(45,108,223,0.25) 50%, rgba(0,0,0,0.08) 80%, transparent)"></div>
+</div>
+
+<section id="tienda" class="section-padding" style="max-width:1180px;margin:0 auto;padding:60px 24px 80px">
   <div class="store-box" style="background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:18px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap">
     <div style="display:flex;flex-direction:column;gap:12px;max-width:520px">
       <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2D6CDF;margin:0">{{ t.store.eyebrow }}</p>
@@ -189,26 +193,44 @@
       <p style="font-size:15.5px;line-height:1.6;color:#5b5e66;margin:0">{{ t.store.body }}</p>
       <a href="https://www.clictogo.co/" target="_blank" rel="noopener" style-hover="transform:translateY(-2px);box-shadow:0 10px 24px rgba(45,108,223,0.3)" style="align-self:flex-start;margin-top:10px;background:linear-gradient(135deg,#2D6CDF,#7C3AED);color:#fff;padding:13px 24px;border-radius:8px;font-size:15px;font-weight:700;transition:all .15s ease">{{ t.store.cta }} ↗</a>
     </div>
-    <div style="width:220px;height:130px;border-radius:12px;border:1px dashed rgba(0,0,0,0.18);background:repeating-linear-gradient(135deg,#f1f0ec,#f1f0ec 8px,#f7f6f3 8px,#f7f6f3 16px);display:flex;align-items:center;justify-content:center;flex:none">
-      <span style="font-family:ui-monospace,monospace;font-size:12px;color:#8b8d94;text-align:center">clictogo.co<br>vista previa</span>
-    </div>
+    <a href="https://www.clictogo.co/" target="_blank" rel="noopener" style-hover="transform:scale(1.03);box-shadow:0 14px 32px rgba(0,0,0,0.14)" style="display:block;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);max-width:340px;width:100%;box-shadow:0 8px 24px rgba(0,0,0,0.07);transition:all .2s ease;flex:none">
+      <img src="assets/clictogo.png" alt="Clictogo - Tienda en línea" style="width:100%;height:auto;display:block;object-fit:cover">
+    </a>
   </div>
 </section>
 
-<section id="equipo" class="section-padding" style="max-width:1180px;margin:0 auto;padding:110px 24px">
-  <div style="max-width:620px;margin:0 auto 52px;text-align:center">
+<div style="max-width:1180px;margin:0 auto;padding:0 24px">
+  <div style="height:1px;background:linear-gradient(90deg, transparent, rgba(0,0,0,0.08) 20%, rgba(45,108,223,0.25) 50%, rgba(0,0,0,0.08) 80%, transparent)"></div>
+</div>
+
+<section id="equipo" class="section-padding" style="max-width:1180px;margin:0 auto;padding:80px 24px">
+  <div style="max-width:680px;margin:0 auto 48px;text-align:center">
     <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2D6CDF;margin:0 0 10px">{{ t.team.eyebrow }}</p>
-    <h2 style="font-family:'Roboto',sans-serif;font-weight:800;font-size:36px;letter-spacing:-0.01em;margin:0 0 14px;color:#121317">{{ t.team.title }}</h2>
-    <p style="font-size:15.5px;line-height:1.6;color:#5b5e66;margin:0">{{ t.team.sub }}</p>
+    <h2 style="font-family:'Roboto',sans-serif;font-weight:800;font-size:36px;letter-spacing:-0.01em;margin:0 0 16px;color:#121317">{{ t.team.title }}</h2>
+    <p style="font-size:16px;line-height:1.65;color:#5b5e66;margin:0">{{ t.team.sub }}</p>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px">
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:52px">
+    <sc-for list="{{ t.team.pillars }}" as="p" hint-placeholder-count="3">
+      <div style-hover="transform:translateY(-4px);border-color:#2D6CDF;box-shadow:0 12px 28px rgba(16,25,92,0.08)" style="background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:26px 22px;display:flex;flex-direction:column;gap:12px;transition:all .18s ease">
+        <div style="width:42px;height:42px;border-radius:10px;background:rgba(45,108,223,0.08);color:#2D6CDF;display:flex;align-items:center;justify-content:center">{{ p.icon }}</div>
+        <h3 style="font-family:'Roboto',sans-serif;font-weight:700;font-size:17px;margin:0;color:#121317">{{ p.title }}</h3>
+        <p style="font-size:14px;line-height:1.55;color:#5b5e66;margin:0">{{ p.desc }}</p>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
     <sc-for list="{{ t.team.members }}" as="m" hint-placeholder-count="4">
-      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px">
-        <div style="width:96px;height:96px;border-radius:50%;border:1.5px dashed rgba(0,0,0,0.22);background:repeating-linear-gradient(135deg,#efeeea,#efeeea 6px,#f6f5f2 6px,#f6f5f2 12px);display:flex;align-items:center;justify-content:center">
-          <span style="font-family:ui-monospace,monospace;font-size:10px;color:#8b8d94">foto</span>
+      <div style-hover="transform:translateY(-4px);border-color:rgba(45,108,223,0.3);box-shadow:0 12px 26px rgba(16,25,92,0.08)" style="background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:28px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;transition:all .18s ease">
+        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#10195C,#2D6CDF);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;letter-spacing:-0.02em;box-shadow:0 6px 16px rgba(45,108,223,0.25)">
+          {{ m.initial }}
         </div>
-        <h3 style="font-family:'Roboto',sans-serif;font-weight:700;font-size:16px;margin:0;color:#121317">{{ m.role }}</h3>
-        <p style="font-size:13.5px;color:#7a7c83;margin:0">{{ m.focus }}</p>
+        <div>
+          <span style="font-size:11.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#2D6CDF;display:block;margin-bottom:4px">{{ m.name }}</span>
+          <h3 style="font-family:'Roboto',sans-serif;font-weight:700;font-size:17px;margin:0 0 8px;color:#121317">{{ m.role }}</h3>
+          <p style="font-size:13.5px;line-height:1.5;color:#5b5e66;margin:0">{{ m.desc }}</p>
+        </div>
       </div>
     </sc-for>
   </div>
@@ -312,13 +334,18 @@ const COPY = {
     },
     team: {
       eyebrow: 'Quiénes somos',
-      title: 'Cuatro socios, un mismo equipo',
-      sub: 'Somos un equipo chico por decisión propia: así tomamos decisiones rápido y nos hacemos responsables de cada entrega.',
+      title: 'Desarrolladores con mentalidad de fundadores',
+      sub: 'No somos una agencia masiva ni revendemos horas. Somos un equipo boutique en Medellín formado por 4 cofundadores que diseñan software a la medida y operan sus propios productos digitales. Trabajas directo con quienes construyen la tecnología.',
+      pillars: [
+        { title: 'Trato directo sin intermediarios', desc: 'Sin gestores de cuenta ni burocracia. Tu proyecto es liderado de principio a fin por los socios fundadores.', iconKey: 'direct' },
+        { title: 'Cultura y experiencia de producto', desc: 'Construimos y operamos marcas propias como Clictogo. Entendemos de negocio, crecimiento y conversión real.', iconKey: 'product' },
+        { title: 'Velocidad y entregas semanales', desc: 'Iteramos en sprints cortos. Cada semana ves avances reales en producción sin retrasos artificiales.', iconKey: 'speed' },
+      ],
       members: [
-        { role: 'Fundador', focus: 'Estrategia y producto' },
-        { role: 'Fundador', focus: 'Desarrollo' },
-        { role: 'Fundador', focus: 'Diseño' },
-        { role: 'Fundador', focus: 'Operaciones y clientes' },
+        { name: 'Cofundador', role: 'Estrategia & Producto', desc: 'Convierte ideas y problemas de negocio en roadmaps claros y productos de alto impacto.', initial: 'EP' },
+        { name: 'Cofundador', role: 'Desarrollo & Arquitectura', desc: 'Diseña la estructura técnica y construye sistemas robustos, rápidos y escalables.', initial: 'DA' },
+        { name: 'Cofundador', role: 'Diseño UI/UX & Experiencia', desc: 'Transforma flujos complejos en interfaces intuitivas, atractivas y optimizadas.', initial: 'UX' },
+        { name: 'Cofundador', role: 'Operaciones & Clientes', desc: 'Garantiza entregas a tiempo, comunicación transparente y alineación estratégica constante.', initial: 'OC' },
       ],
     },
     store: {
@@ -376,13 +403,18 @@ const COPY = {
     },
     team: {
       eyebrow: 'Who we are',
-      title: 'Four partners, one team',
-      sub: "We're a small team by choice — it lets us decide fast and own every delivery.",
+      title: 'Developers with a founder mindset',
+      sub: "We're not a bloated agency. We're a boutique team in Medellín of 4 co-founders building custom software and operating our own digital products. You work directly with the builders, zero middlemen.",
+      pillars: [
+        { title: 'Direct co-founder access', desc: 'No account managers or middle layers. Your project is led directly by the partners and senior builders.', iconKey: 'direct' },
+        { title: 'Real product culture', desc: 'We build and run our own platforms like Clictogo. We understand real business metrics, UX, and conversion.', iconKey: 'product' },
+        { title: 'Speed & weekly iterations', desc: 'Zero red tape. Fast decision-making with tangible, weekly production releases.', iconKey: 'speed' },
+      ],
       members: [
-        { role: 'Founder', focus: 'Strategy & product' },
-        { role: 'Founder', focus: 'Development' },
-        { role: 'Founder', focus: 'Design' },
-        { role: 'Founder', focus: 'Operations & clients' },
+        { name: 'Co-founder', role: 'Strategy & Product', desc: 'Turns business challenges into clear, viable, and scalable product roadmaps.', initial: 'SP' },
+        { name: 'Co-founder', role: 'Development & Architecture', desc: 'Engineers robust, fast, and high-performance software systems.', initial: 'DA' },
+        { name: 'Co-founder', role: 'UI/UX Design & Experience', desc: 'Crafts clean, intuitive interfaces optimized for engagement and conversion.', initial: 'UX' },
+        { name: 'Co-founder', role: 'Operations & Client Success', desc: 'Ensures on-time delivery, clear communication, and seamless execution.', initial: 'OC' },
       ],
     },
     store: {
@@ -413,6 +445,12 @@ const ICONS = {
     React.createElement('polygon', { points: '12 3 21 8 12 13 3 8' }), React.createElement('polyline', { points: '3 12 12 17 21 12' }), React.createElement('polyline', { points: '3 16 12 21 21 16' })),
   ai: React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'currentColor' },
     React.createElement('path', { d: 'M12 2 L14 9 L21 11 L14 13 L12 20 L10 13 L3 11 L10 9 Z' })),
+  direct: React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' },
+    React.createElement('path', { d: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2' }), React.createElement('circle', { cx: 9, cy: 7, r: 4 }), React.createElement('path', { d: 'M23 21v-2a4 4 0 0 0-3-3.87' }), React.createElement('path', { d: 'M16 3.13a4 4 0 0 1 0 7.75' })),
+  product: React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' },
+    React.createElement('path', { d: 'M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71 1.26-1.5 1.74-2.31' }), React.createElement('path', { d: 'M12 15l-3-3' }), React.createElement('path', { d: 'M15 12l-3-3' }), React.createElement('path', { d: 'M18 9l-3-3' }), React.createElement('path', { d: 'M9.5 2.5a6 6 0 0 1 12 12c-2.4 2.4-7.6 4-11 4s-4.5-.6-4.5-.6S2 13 2 12c0-3.4 1.6-8.6 4-11a6 6 0 0 1 3.5-1.5z' })),
+  speed: React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' },
+    React.createElement('polygon', { points: '13 2 3 14 12 14 11 22 21 10 12 10 13 2' })),
 };
 
 const CLICTOGO_NAVY = '#10195C';
@@ -538,6 +576,10 @@ class Component extends DCLogic {
       hero: { ...base.hero, tagline: this.props.tagline ?? (lang === 'es' ? 'Tu próximo clic hacia la innovación' : 'Your next click toward innovation') },
       services: { ...base.services, items: base.services.items.map(it => ({ ...it, icon: ICONS[it.iconKey] })) },
       process: { ...base.process, steps },
+      team: {
+        ...base.team,
+        pillars: base.team.pillars ? base.team.pillars.map(p => ({ ...p, icon: ICONS[p.iconKey] })) : [],
+      },
     };
     return {
       t, lang,
